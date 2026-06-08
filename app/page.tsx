@@ -1,4 +1,11 @@
+"use client";
+
+import { useState } from "react";
 export default function Home() {
+  const [insight, setInsight] = useState(
+    "Revenue is trending upward and customer engagement has improved this week."
+  );
+  const [loading, setLoading] = useState(false);
   return (
     <main className="min-h-screen bg-black text-white">
             {/* Navbar */}
@@ -169,6 +176,49 @@ export default function Home() {
           </p>
         </div>
       </section>
+            {/* AI Assistant */}
+      <div className="max-w-6xl mx-auto mt-8 bg-zinc-900 rounded-xl p-8">
+
+        <h3 className="text-2xl font-bold mb-4">
+          AI Business Assistant
+        </h3>
+
+        <input
+          type="text"
+          placeholder="Ask about sales, customers or revenue..."
+          className="w-full p-4 rounded-lg bg-zinc-800 mb-4"
+        />
+
+        <button
+  onClick={() => {
+    const insights = [
+      "Sales increased by 12% this week.",
+      "Customer engagement is higher than last month.",
+      "Marketing campaigns are generating quality leads.",
+      "Revenue growth is strongest among returning customers.",
+      "Support response time improved by 18%."
+    ];
+
+    setLoading(true);
+
+setTimeout(() => {
+  const randomInsight =
+    insights[Math.floor(Math.random() * insights.length)];
+
+  setInsight(randomInsight);
+  setLoading(false);
+}, 1500);
+  }}
+  className="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-500 transition-all"
+>
+  Analyze
+</button>
+
+        <div className="mt-6 p-4 bg-zinc-800 rounded-lg">
+          AI Insight: {loading ? "Analyzing business data..." : insight}
+        </div>
+
+      </div>
             {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 text-center text-gray-500">
         <p>© 2026 AI Commerce OS. All rights reserved.</p>
