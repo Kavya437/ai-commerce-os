@@ -6,6 +6,13 @@ export default function Home() {
     "Revenue is trending upward and customer engagement has improved this week."
   );
   const [loading, setLoading] = useState(false);
+  const [query, setQuery] = useState("");
+  const [recommendation, setRecommendation] = useState(
+  "Increase marketing budget by 10% to capitalize on rising engagement."
+);
+const [automationStatus, setAutomationStatus] = useState(
+  "Waiting for Order..."
+);
   return (
     <main className="min-h-screen bg-black text-white">
             {/* Navbar */}
@@ -175,6 +182,27 @@ export default function Home() {
             higher engagement and customer support response time improved by 18%.
           </p>
         </div>
+        <div className="max-w-6xl mx-auto mt-8 bg-zinc-900 rounded-xl p-8">
+  <h3 className="text-2xl font-bold mb-4">
+    CEO Recommendations
+  </h3>
+
+  <div className="space-y-4">
+
+    <div className="bg-zinc-800 p-4 rounded-lg">
+      📈 {recommendation}
+    </div>
+
+    <div className="bg-zinc-800 p-4 rounded-lg">
+      👥 Focus on repeat customers as retention rates are improving.
+    </div>
+
+    <div className="bg-zinc-800 p-4 rounded-lg">
+      ⚡ Support team performance is strong — consider expanding outreach campaigns.
+    </div>
+
+  </div>
+</div>
       </section>
             {/* AI Assistant */}
       <div className="max-w-6xl mx-auto mt-8 bg-zinc-900 rounded-xl p-8">
@@ -187,26 +215,49 @@ export default function Home() {
           type="text"
           placeholder="Ask about sales, customers or revenue..."
           className="w-full p-4 rounded-lg bg-zinc-800 mb-4"
+          value={query}
+onChange={(e) => setQuery(e.target.value)}
         />
 
         <button
   onClick={() => {
-    const insights = [
-      "Sales increased by 12% this week.",
-      "Customer engagement is higher than last month.",
-      "Marketing campaigns are generating quality leads.",
-      "Revenue growth is strongest among returning customers.",
-      "Support response time improved by 18%."
-    ];
-
+    
     setLoading(true);
 
 setTimeout(() => {
-  const randomInsight =
-    insights[Math.floor(Math.random() * insights.length)];
+  let response = "";
 
-  setInsight(randomInsight);
-  setLoading(false);
+if (query.toLowerCase().includes("sales")) {
+  response = "Sales increased by 12% this week.";
+  setRecommendation("Scale advertising to maintain sales momentum.");
+}
+else if (query.toLowerCase().includes("marketing")) {
+  response = "Marketing campaigns generated 250 qualified leads.";
+  setRecommendation("Increase campaign budget for top-performing channels.");
+}
+else if (query.toLowerCase().includes("customer")) {
+  response = "Customer satisfaction is currently 94%.";
+  setRecommendation("Focus on loyalty programs and repeat purchases.");
+}
+else if (query.toLowerCase().includes("support")) {
+  response = "Support response time improved by 18%.";
+  setRecommendation("Maintain support quality and improve retention efforts.");
+}
+else if (query.toLowerCase().includes("revenue")) {
+  response = "Revenue grew by 8% compared to last month.";
+  setRecommendation("Invest in high-margin product categories.");
+}
+else {
+  response =
+    "No matching business data found. Try sales, marketing, customers, support, or revenue.";
+
+  setRecommendation(
+    "Ask about sales, marketing, customers, support, or revenue."
+  );
+}
+
+setInsight(response);
+setLoading(false);
 }, 1500);
   }}
   className="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-500 transition-all"
@@ -219,6 +270,65 @@ setTimeout(() => {
         </div>
 
       </div>
+      <div className="max-w-6xl mx-auto mt-8 bg-zinc-900 rounded-xl p-8">
+  <h3 className="text-2xl font-bold mb-4">
+    Automation Simulator
+  </h3>
+
+  <button
+    onClick={() => {
+      setAutomationStatus("Sales Agent Processing...");
+      
+      setTimeout(() => {
+        setAutomationStatus("Marketing Agent Processing...");
+      }, 1000);
+
+      setTimeout(() => {
+        setAutomationStatus("Support Agent Processing...");
+      }, 2000);
+
+      setTimeout(() => {
+        setAutomationStatus("Finance Agent Processing...");
+      }, 3000);
+
+      setTimeout(() => {
+        setAutomationStatus("CEO Dashboard Updated ✅");
+      }, 4000);
+    }}
+    className="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-500 transition-all"
+  >
+    Simulate Order
+  </button>
+
+  <div className="mt-6 p-4 bg-zinc-800 rounded-lg">
+    {automationStatus}
+  </div>
+</div>
+<div className="max-w-6xl mx-auto mt-8 bg-zinc-900 rounded-xl p-8">
+  <h3 className="text-2xl font-bold mb-4">
+    Agent Activity Feed
+  </h3>
+
+  <div className="space-y-3">
+
+    <div className="bg-zinc-800 p-3 rounded-lg">
+      ✅ Sales Agent processed order #1024
+    </div>
+
+    <div className="bg-zinc-800 p-3 rounded-lg">
+      📈 Marketing Agent launched email campaign
+    </div>
+
+    <div className="bg-zinc-800 p-3 rounded-lg">
+      🎧 Support Agent resolved ticket #341
+    </div>
+
+    <div className="bg-zinc-800 p-3 rounded-lg">
+      💰 Finance Agent updated revenue report
+    </div>
+
+  </div>
+</div>
             {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 text-center text-gray-500">
         <p>© 2026 AI Commerce OS. All rights reserved.</p>
