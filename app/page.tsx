@@ -13,6 +13,12 @@ export default function Home() {
 const [automationStatus, setAutomationStatus] = useState(
   "Waiting for Order..."
 );
+const [activities, setActivities] = useState([
+  "✅ Sales Agent processed order #1024",
+  "📈 Marketing Agent launched email campaign",
+  "🎧 Support Agent resolved ticket #341",
+  "💰 Finance Agent updated revenue report",
+]);
   return (
     <main className="min-h-screen bg-black text-white">
             {/* Navbar */}
@@ -292,8 +298,17 @@ setLoading(false);
       }, 3000);
 
       setTimeout(() => {
-        setAutomationStatus("CEO Dashboard Updated ✅");
-      }, 4000);
+  setAutomationStatus("CEO Dashboard Updated ✅");
+
+  setActivities([
+    "🛒 New order received",
+    "✅ Sales Agent processed order #2048",
+    "📈 Marketing Agent generated follow-up campaign",
+    "🎧 Support Agent created customer profile",
+    "💰 Finance Agent recorded transaction",
+  ]);
+
+}, 4000);
     }}
     className="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-500 transition-all"
   >
@@ -311,21 +326,14 @@ setLoading(false);
 
   <div className="space-y-3">
 
-    <div className="bg-zinc-800 p-3 rounded-lg">
-      ✅ Sales Agent processed order #1024
-    </div>
-
-    <div className="bg-zinc-800 p-3 rounded-lg">
-      📈 Marketing Agent launched email campaign
-    </div>
-
-    <div className="bg-zinc-800 p-3 rounded-lg">
-      🎧 Support Agent resolved ticket #341
-    </div>
-
-    <div className="bg-zinc-800 p-3 rounded-lg">
-      💰 Finance Agent updated revenue report
-    </div>
+    {activities.map((activity, index) => (
+  <div
+    key={index}
+    className="bg-zinc-800 p-3 rounded-lg"
+  >
+    {activity}
+  </div>
+))}
 
   </div>
 </div>
