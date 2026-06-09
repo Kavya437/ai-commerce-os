@@ -8,20 +8,20 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
   const [recommendation, setRecommendation] = useState(
-  "Increase marketing budget by 10% to capitalize on rising engagement."
-);
-const [automationStatus, setAutomationStatus] = useState(
-  "Waiting for Order..."
-);
-const [activities, setActivities] = useState([
-  "✅ Sales Agent processed order #1024",
-  "📈 Marketing Agent launched email campaign",
-  "🎧 Support Agent resolved ticket #341",
-  "💰 Finance Agent updated revenue report",
-]);
+    "Increase marketing budget by 10% to capitalize on rising engagement."
+  );
+  const [automationStatus, setAutomationStatus] = useState(
+    "Waiting for Order..."
+  );
+  const [activities, setActivities] = useState([
+    "✅ Sales Agent processed order #1024",
+    "📈 Marketing Agent launched email campaign",
+    "🎧 Support Agent resolved ticket #341",
+    "💰 Finance Agent updated revenue report",
+  ]);
   return (
     <main className="min-h-screen bg-black text-white">
-            {/* Navbar */}
+      {/* Navbar */}
       <nav className="flex items-center justify-between px-8 py-6 border-b border-zinc-800">
 
         <h1 className="text-2xl font-bold">
@@ -30,8 +30,8 @@ const [activities, setActivities] = useState([
 
         <div className="flex gap-6 text-gray-400">
           <a href="#agents">Agents</a>
-<a href="#workflow">Workflow</a>
-<a href="#dashboard">Dashboard</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#dashboard">Dashboard</a>
           <a href="/cart">Cart</a>
           <a href="#">Contact</a>
         </div>
@@ -55,8 +55,8 @@ const [activities, setActivities] = useState([
           Explore Products
         </a>
       </section>
-            {/* AI Agents Section */}
-      <section id="agents" className="py-20 px-6 bg-zinc-950">  
+      {/* AI Agents Section */}
+      <section id="agents" className="py-20 px-6 bg-zinc-950">
         <h2 className="text-4xl font-bold text-center mb-12">
           AI Agents
         </h2>
@@ -100,7 +100,7 @@ const [activities, setActivities] = useState([
 
         </div>
       </section>
-            {/* Workflow Section */}
+      {/* Workflow Section */}
       <section id="workflow" className="py-20 px-6 bg-black">
         <h2 className="text-4xl font-bold text-center mb-12">
           Workflow Automation
@@ -148,35 +148,44 @@ const [activities, setActivities] = useState([
 
         </div>
       </section>
-            {/* Dashboard Preview */}
+      {/* Dashboard Preview */}
       <section id="dashboard" className="py-20 px-6 bg-zinc-950">
         <h2 className="text-4xl font-bold text-center mb-12">
           CEO Dashboard
         </h2>
+        <div className="grid md:grid-cols-4 gap-6 mb-8">
 
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
-
-          <div className="bg-zinc-900 p-6 rounded-xl">
-            <h3 className="text-gray-400">Total Orders</h3>
-            <p className="text-3xl font-bold mt-2">1,248</p>
+          <div className="bg-zinc-900 p-6 rounded-xl text-center">
+            <h3 className="text-gray-400 mb-2">Revenue</h3>
+            <p className="text-3xl font-bold text-green-400">
+              ₹1.2L
+            </p>
           </div>
 
-          <div className="bg-zinc-900 p-6 rounded-xl">
-            <h3 className="text-gray-400">Revenue</h3>
-            <p className="text-3xl font-bold mt-2">$52,430</p>
+          <div className="bg-zinc-900 p-6 rounded-xl text-center">
+            <h3 className="text-gray-400 mb-2">Orders</h3>
+            <p className="text-3xl font-bold">
+              248
+            </p>
           </div>
 
-          <div className="bg-zinc-900 p-6 rounded-xl">
-            <h3 className="text-gray-400">Customers</h3>
-            <p className="text-3xl font-bold mt-2">842</p>
+          <div className="bg-zinc-900 p-6 rounded-xl text-center">
+            <h3 className="text-gray-400 mb-2">Customers</h3>
+            <p className="text-3xl font-bold">
+              1,024
+            </p>
           </div>
 
-          <div className="bg-zinc-900 p-6 rounded-xl">
-            <h3 className="text-gray-400">AI Efficiency</h3>
-            <p className="text-3xl font-bold mt-2">96%</p>
+          <div className="bg-zinc-900 p-6 rounded-xl text-center">
+            <h3 className="text-gray-400 mb-2">Conversion Rate</h3>
+            <p className="text-3xl font-bold text-blue-400">
+              4.8%
+            </p>
           </div>
 
         </div>
+
+
 
         <div className="max-w-6xl mx-auto mt-8 bg-zinc-900 rounded-xl p-8">
           <h3 className="text-2xl font-bold mb-4">
@@ -189,28 +198,28 @@ const [activities, setActivities] = useState([
           </p>
         </div>
         <div className="max-w-6xl mx-auto mt-8 bg-zinc-900 rounded-xl p-8">
-  <h3 className="text-2xl font-bold mb-4">
-    CEO Recommendations
-  </h3>
+          <h3 className="text-2xl font-bold mb-4">
+            CEO Recommendations
+          </h3>
 
-  <div className="space-y-4">
+          <div className="space-y-4">
 
-    <div className="bg-zinc-800 p-4 rounded-lg">
-      📈 {recommendation}
-    </div>
+            <div className="bg-zinc-800 p-4 rounded-lg">
+              📈 {recommendation}
+            </div>
 
-    <div className="bg-zinc-800 p-4 rounded-lg">
-      👥 Focus on repeat customers as retention rates are improving.
-    </div>
+            <div className="bg-zinc-800 p-4 rounded-lg">
+              👥 Focus on repeat customers as retention rates are improving.
+            </div>
 
-    <div className="bg-zinc-800 p-4 rounded-lg">
-      ⚡ Support team performance is strong — consider expanding outreach campaigns.
-    </div>
+            <div className="bg-zinc-800 p-4 rounded-lg">
+              ⚡ Support team performance is strong — consider expanding outreach campaigns.
+            </div>
 
-  </div>
-</div>
+          </div>
+        </div>
       </section>
-            {/* AI Assistant */}
+      {/* AI Assistant */}
       <div className="max-w-6xl mx-auto mt-8 bg-zinc-900 rounded-xl p-8">
 
         <h3 className="text-2xl font-bold mb-4">
@@ -222,54 +231,54 @@ const [activities, setActivities] = useState([
           placeholder="Ask about sales, customers or revenue..."
           className="w-full p-4 rounded-lg bg-zinc-800 mb-4"
           value={query}
-onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => setQuery(e.target.value)}
         />
 
         <button
-  onClick={() => {
-    
-    setLoading(true);
+          onClick={() => {
 
-setTimeout(() => {
-  let response = "";
+            setLoading(true);
 
-if (query.toLowerCase().includes("sales")) {
-  response = "Sales increased by 12% this week.";
-  setRecommendation("Scale advertising to maintain sales momentum.");
-}
-else if (query.toLowerCase().includes("marketing")) {
-  response = "Marketing campaigns generated 250 qualified leads.";
-  setRecommendation("Increase campaign budget for top-performing channels.");
-}
-else if (query.toLowerCase().includes("customer")) {
-  response = "Customer satisfaction is currently 94%.";
-  setRecommendation("Focus on loyalty programs and repeat purchases.");
-}
-else if (query.toLowerCase().includes("support")) {
-  response = "Support response time improved by 18%.";
-  setRecommendation("Maintain support quality and improve retention efforts.");
-}
-else if (query.toLowerCase().includes("revenue")) {
-  response = "Revenue grew by 8% compared to last month.";
-  setRecommendation("Invest in high-margin product categories.");
-}
-else {
-  response =
-    "No matching business data found. Try sales, marketing, customers, support, or revenue.";
+            setTimeout(() => {
+              let response = "";
 
-  setRecommendation(
-    "Ask about sales, marketing, customers, support, or revenue."
-  );
-}
+              if (query.toLowerCase().includes("sales")) {
+                response = "Sales increased by 12% this week.";
+                setRecommendation("Scale advertising to maintain sales momentum.");
+              }
+              else if (query.toLowerCase().includes("marketing")) {
+                response = "Marketing campaigns generated 250 qualified leads.";
+                setRecommendation("Increase campaign budget for top-performing channels.");
+              }
+              else if (query.toLowerCase().includes("customer")) {
+                response = "Customer satisfaction is currently 94%.";
+                setRecommendation("Focus on loyalty programs and repeat purchases.");
+              }
+              else if (query.toLowerCase().includes("support")) {
+                response = "Support response time improved by 18%.";
+                setRecommendation("Maintain support quality and improve retention efforts.");
+              }
+              else if (query.toLowerCase().includes("revenue")) {
+                response = "Revenue grew by 8% compared to last month.";
+                setRecommendation("Invest in high-margin product categories.");
+              }
+              else {
+                response =
+                  "No matching business data found. Try sales, marketing, customers, support, or revenue.";
 
-setInsight(response);
-setLoading(false);
-}, 1500);
-  }}
-  className="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-500 transition-all"
->
-  Analyze
-</button>
+                setRecommendation(
+                  "Ask about sales, marketing, customers, support, or revenue."
+                );
+              }
+
+              setInsight(response);
+              setLoading(false);
+            }, 1500);
+          }}
+          className="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-500 transition-all"
+        >
+          Analyze
+        </button>
 
         <div className="mt-6 p-4 bg-zinc-800 rounded-lg">
           AI Insight: {loading ? "Analyzing business data..." : insight}
@@ -277,67 +286,67 @@ setLoading(false);
 
       </div>
       <div className="max-w-6xl mx-auto mt-8 bg-zinc-900 rounded-xl p-8">
-  <h3 className="text-2xl font-bold mb-4">
-    Automation Simulator
-  </h3>
+        <h3 className="text-2xl font-bold mb-4">
+          Automation Simulator
+        </h3>
 
-  <button
-    onClick={() => {
-      setAutomationStatus("Sales Agent Processing...");
-      
-      setTimeout(() => {
-        setAutomationStatus("Marketing Agent Processing...");
-      }, 1000);
+        <button
+          onClick={() => {
+            setAutomationStatus("Sales Agent Processing...");
 
-      setTimeout(() => {
-        setAutomationStatus("Support Agent Processing...");
-      }, 2000);
+            setTimeout(() => {
+              setAutomationStatus("Marketing Agent Processing...");
+            }, 1000);
 
-      setTimeout(() => {
-        setAutomationStatus("Finance Agent Processing...");
-      }, 3000);
+            setTimeout(() => {
+              setAutomationStatus("Support Agent Processing...");
+            }, 2000);
 
-      setTimeout(() => {
-  setAutomationStatus("CEO Dashboard Updated ✅");
+            setTimeout(() => {
+              setAutomationStatus("Finance Agent Processing...");
+            }, 3000);
 
-  setActivities([
-    "🛒 New order received",
-    "✅ Sales Agent processed order #2048",
-    "📈 Marketing Agent generated follow-up campaign",
-    "🎧 Support Agent created customer profile",
-    "💰 Finance Agent recorded transaction",
-  ]);
+            setTimeout(() => {
+              setAutomationStatus("CEO Dashboard Updated ✅");
 
-}, 4000);
-    }}
-    className="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-500 transition-all"
-  >
-    Simulate Order
-  </button>
+              setActivities([
+                "🛒 New order received",
+                "✅ Sales Agent processed order #2048",
+                "📈 Marketing Agent generated follow-up campaign",
+                "🎧 Support Agent created customer profile",
+                "💰 Finance Agent recorded transaction",
+              ]);
 
-  <div className="mt-6 p-4 bg-zinc-800 rounded-lg">
-    {automationStatus}
-  </div>
-</div>
-<div className="max-w-6xl mx-auto mt-8 bg-zinc-900 rounded-xl p-8">
-  <h3 className="text-2xl font-bold mb-4">
-    Agent Activity Feed
-  </h3>
+            }, 4000);
+          }}
+          className="bg-purple-600 px-6 py-3 rounded-lg hover:bg-purple-500 transition-all"
+        >
+          Simulate Order
+        </button>
 
-  <div className="space-y-3">
+        <div className="mt-6 p-4 bg-zinc-800 rounded-lg">
+          {automationStatus}
+        </div>
+      </div>
+      <div className="max-w-6xl mx-auto mt-8 bg-zinc-900 rounded-xl p-8">
+        <h3 className="text-2xl font-bold mb-4">
+          Agent Activity Feed
+        </h3>
 
-    {activities.map((activity, index) => (
-  <div
-    key={index}
-    className="bg-zinc-800 p-3 rounded-lg"
-  >
-    {activity}
-  </div>
-))}
+        <div className="space-y-3">
 
-  </div>
-</div>
-            {/* Footer */}
+          {activities.map((activity, index) => (
+            <div
+              key={index}
+              className="bg-zinc-800 p-3 rounded-lg"
+            >
+              {activity}
+            </div>
+          ))}
+
+        </div>
+      </div>
+      {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 text-center text-gray-500">
         <p>© 2026 AI Commerce OS. All rights reserved.</p>
         <p className="mt-2">

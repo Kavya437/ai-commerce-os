@@ -103,6 +103,93 @@ export default function ProductsPage() {
   Add to Cart
 </button>
         </div>
+        <div className="bg-zinc-900 p-6 rounded-xl hover:-translate-y-2 hover:border-blue-500 border border-zinc-800 transition-all">
+  <h2 className="text-2xl font-bold mb-3">
+    AI Laptop Pro
+  </h2>
+
+  <Image
+    src="/products/laptop.jpg"
+    alt="AI Laptop Pro"
+    width={250}
+    height={180}
+    className="rounded-lg mb-4"
+  />
+
+  <p className="text-yellow-400 mb-2">
+    ⭐⭐⭐⭐⭐ (4.9)
+  </p>
+
+  <p className="text-gray-400 mb-4">
+    High-performance laptop for AI workloads.
+  </p>
+
+  <p className="text-3xl font-bold mb-4">
+    ₹59,999
+  </p>
+
+  <button className="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-500">
+    Add to Cart
+  </button>
+</div>
+<div className="bg-zinc-900 p-6 rounded-xl hover:-translate-y-2 hover:border-blue-500 border border-zinc-800 transition-all">
+  <h2 className="text-2xl font-bold mb-3">
+    Smart Phone X
+  </h2>
+
+  <Image
+    src="/products/phone.jpg"
+    alt="Smart Phone X"
+    width={250}
+    height={180}
+    className="rounded-lg mb-4"
+  />
+
+  <p className="text-yellow-400 mb-2">
+    ⭐⭐⭐⭐⭐ (4.7)
+  </p>
+
+  <p className="text-gray-400 mb-4">
+    AI-enhanced smartphone experience.
+  </p>
+
+  <p className="text-3xl font-bold mb-4">
+    ₹24,999
+  </p>
+
+  <button className="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-500">
+    Add to Cart
+  </button>
+</div>
+<div className="bg-zinc-900 p-6 rounded-xl hover:-translate-y-2 hover:border-blue-500 border border-zinc-800 transition-all">
+  <h2 className="text-2xl font-bold mb-3">
+    Mechanical Keyboard
+  </h2>
+
+  <Image
+    src="/products/keyboard.jpg"
+    alt="Mechanical Keyboard"
+    width={250}
+    height={180}
+    className="rounded-lg mb-4"
+  />
+
+  <p className="text-yellow-400 mb-2">
+    ⭐⭐⭐⭐⭐ (4.8)
+  </p>
+
+  <p className="text-gray-400 mb-4">
+    RGB mechanical keyboard for productivity.
+  </p>
+
+  <p className="text-3xl font-bold mb-4">
+    ₹3,499
+  </p>
+
+  <button className="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-500">
+    Add to Cart
+  </button>
+</div>
 
       </div>
 

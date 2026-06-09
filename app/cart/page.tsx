@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 export default function CartPage() {
+  const [quantity, setQuantity] = useState(1);
   return (
     <main className="min-h-screen bg-black text-white p-8">
 
@@ -12,20 +16,34 @@ export default function CartPage() {
           Smart Watch
         </h2>
 
-        <p className="text-gray-400 mb-4">
-          Quantity: 1
-        </p>
+        <div className="flex items-center gap-3 mb-4">
+          <button
+            onClick={() => quantity > 1 && setQuantity(quantity - 1)}
+            className="bg-red-600 px-3 py-1 rounded"
+          >
+            -
+          </button>
+
+          <span>Quantity: {quantity}</span>
+
+          <button
+            onClick={() => setQuantity(quantity + 1)}
+            className="bg-green-600 px-3 py-1 rounded"
+          >
+            +
+          </button>
+        </div>
 
         <p className="text-xl font-semibold mb-6">
-          ₹4,999
+          ₹{4999 * quantity}
         </p>
 
         <a
-  href="/checkout"
-  className="inline-block bg-green-600 px-6 py-3 rounded-lg hover:bg-green-500 transition-all"
->
-  Proceed to Checkout
-</a>
+          href="/checkout"
+          className="inline-block bg-green-600 px-6 py-3 rounded-lg hover:bg-green-500 transition-all"
+        >
+          Proceed to Checkout
+        </a>
 
       </div>
 
